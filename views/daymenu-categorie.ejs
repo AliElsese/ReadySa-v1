@@ -1,0 +1,114 @@
+<%- include('include/_header') %>
+
+    <nav class="navbar navbar-expand-xl navbar-light">
+        <div class="container">
+            <a class="navbar-brand mb-2" href="/" ><img src="/img/logo2.png" alt="logo" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBasic" aria-controls="navbarBasic" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars text-white"></i>
+            </button>
+            <div class="collapse navbar-collapse show" id="navbarBasic">
+                <ul class="navbar-nav me-auto mb-2">
+                    <li class="nav-item m-2">
+                        <a class="nav-link" href="/" >
+                            
+                            الرئيسية
+                        </a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" href="/restaurants" >
+                            
+                            المطاعم
+                        </a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link active" href="/day-menu" >
+                            
+                            منيو اليوم
+                        </a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" href="/offers" >
+                            
+                            العروض
+                        </a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" href="/profile" >
+                            
+                            حسابي
+                        </a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" href="/ordersRestaurants" >
+                            
+                            طلباتي
+                        </a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" href="/contact-us" >
+                            
+                            اتصل بنا
+                        </a>
+                    </li>
+                    <% if(user != null) { %>
+                        <li class="nav-item m-2">
+                            <a class="nav-link" href="/logoutUser" >
+                                
+                                تسجيل خروج
+                            </a>
+                        </li>
+                    <% } else { %>
+                        <li class="nav-item m-2">
+                            <a class="nav-link" href="/login-user" >
+                                    
+                                تسجيل دخول
+                            </a>
+                        </li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="day-menu">
+        <div class="heading">
+            <div class="overlay">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="heading-text">
+                                <h1><%= menu[0].cataname %></h1>
+                                <p>مجموعة من أقوي القوائم الأعلي تقيما لهذا اليوم</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="event m-5">
+
+            <div class="container">
+    
+                <div class="row">
+                    <% for(var i = 0; i < menu.length; i++) { %>
+                    <div class="col-md-4">
+                        <div class="card text-center mb-4">
+                            <img src="/<%= menu[i].mealimage %>" class="px-2 py-2" style="width : 338px; height : 335px" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= menu[i].mealname %></h5>
+                                <a href="/mealdescription/<%= menu[i].mealid %>" class="form-control mt-4">عرض التفاصيل</a>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+                </div>
+    
+            </div>
+    
+        </section>
+
+        <%- include('include/_appstore') %>
+    </div>
+
+<%- include('include/_footer') %>

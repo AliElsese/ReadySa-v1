@@ -1,0 +1,11 @@
+<% for(var i = 0; i < admins.length; i++) { %>
+    <tr>
+        <td><%= i + 1 %></td>
+        <td><%= admins[i].email %></td>
+        <td>
+            <a href="/api-deleteAdmin/<%= admins[i].adminid %>" style="display: inline-block; color: darkred;" class="delete"> 
+                حذف 
+            </a>
+        </td>
+    </tr>
+<% } %>

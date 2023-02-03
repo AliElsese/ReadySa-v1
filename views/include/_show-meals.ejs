@@ -1,0 +1,17 @@
+<% for(var i = 0; i < meals.length; i++) { %>
+    <tr>
+        <td><%= i + 1 %></td>
+        <td><%= meals[i].mealname %></td>
+        <td><%= meals[i].mealprice %><sub>RS</sub></td>
+        <td><%= meals[i].mealdescription %></td>
+        <td><%= meals[i].mealpoints %></td>
+        <td>
+            <img src="/<%= meals[i].mealimage %>" style="width: 100px;height: 100px;" alt="">
+        </td>
+        <td>
+            <a href="/api-deleteMeal/<%= meals[i].mealid %>" style="display: inline-block; color: darkred;" class="delete"> 
+                حذف 
+            </a>
+        </td>
+    </tr>
+<% } %>

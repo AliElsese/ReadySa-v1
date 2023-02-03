@@ -1,0 +1,18 @@
+<% for(var i = 0; i < categories.length; i++) { %>
+    <tr>
+        <td><%= i + 1 %></td>
+        <td><%= categories[i].cataname %></td>
+        <td>
+            <img src="/<%= categories[i].cataimage %>" style="width: 100px;height: 100px;" alt="">
+        </td>
+        <td>
+            <a href="/api-deleteCategorie/<%= categories[i].restaurantid %>/<%= categories[i].cataid %>" style="display: inline-block; color: darkred;" class="delete"> 
+                حذف 
+            </a>
+            <br>
+            <a href="/update-categorie/<%= categories[i].cataid %>" style="display: inline-block; color: blue;" class="delete"> 
+                تعديل 
+            </a>
+        </td>
+    </tr>
+<% } %>

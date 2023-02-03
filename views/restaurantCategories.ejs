@@ -1,0 +1,124 @@
+<%- include('include/_header') %>
+
+    <nav class="navbar navbar-expand-xl navbar-light">
+        <div class="container">
+            <a class="navbar-brand mb-2" href="/" ><img src="/img/logo2.png" alt="logo" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBasic" aria-controls="navbarBasic" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars text-white"></i>
+            </button>
+            <div class="collapse navbar-collapse show" id="navbarBasic">
+                <ul class="navbar-nav me-auto mb-2">
+                    <li class="nav-item m-2">
+                        <a class="nav-link" href="/" >
+                            
+                            الرئيسية
+                        </a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link active" href="/restaurants" >
+                            
+                            المطاعم
+                        </a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" href="/day-menu" >
+                            
+                            منيو اليوم
+                        </a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" href="/offers" >
+                            
+                            العروض
+                        </a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" href="/profile" >
+                            
+                            حسابي
+                        </a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" href="/ordersRestaurants" >
+                            
+                            طلباتي
+                        </a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" href="/contact-us" >
+                            
+                            اتصل بنا
+                        </a>
+                    </li>
+                    <% if(user != null) { %>
+                        <li class="nav-item m-2">
+                            <a class="nav-link" href="/logoutUser" >
+                                
+                                تسجيل خروج
+                            </a>
+                        </li>
+                    <% } else { %>
+                        <li class="nav-item m-2">
+                            <a class="nav-link" href="/login-user" >
+                                    
+                                تسجيل دخول
+                            </a>
+                        </li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="Restaurants">
+        <header class="mb-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="header-info">
+                            <div class="info-title">
+                                <h1>الاقسام</h1>
+                            </div>
+
+                            <p>
+                                جميع اقسام المطعم
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="header-img">
+                            <img src='/img/restaurants/image-from-rawpixel-id-2822722-original.png' alt="header-img" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="event m-5">
+
+            <div class="container">
+    
+                <div class="row">
+                    <% for(var i = 0; i < categories.length; i++) { %>
+                    <div class="col-md-4">
+                        <div class="card text-center mb-4">
+                            <img src="/<%= categories[i].cataimage %>" class="px-2 py-2" style="width : 338px; height : 335px" alt="...">
+                            <div class="card-body">
+                                <a href="/restaurantMenu/<%= categories[0].restaurantid %>/<%= categories[i].cataid %>" style="text-decoration: none;">
+                                    <h3 class="card-title"><%= categories[i].cataname %></h3>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+                </div>
+    
+            </div>
+    
+        </section>
+
+        <%- include('include/_appstore') %>
+        
+    </div>
+
+<%- include('include/_footer') %>

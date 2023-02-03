@@ -1,0 +1,17 @@
+<% for(var i = 0; i < restaurant.length; i++) { %>
+    <tr>
+        <td><%= i + 1 %></td>
+        <td><%= restaurant[i].restaurantname %></td>
+        <td><%= restaurant[i].restaurantemail %></td>
+        <td><%= restaurant[i].restaurantphone %></td>
+        <td><%= restaurant[i].restaurantaddress %></td>
+        <td>
+            <img src="/<%= restaurant[i].restaurantimage %>" style="width: 100px;height: 100px;" alt="">
+        </td>
+        <td>
+            <a href="/update-restaurantDetails/<%= restaurant[i].restaurantid %>" style="display: inline-block; color: blue;" class="delete"> 
+                تعديل 
+            </a>
+        </td>
+    </tr>
+<% } %>

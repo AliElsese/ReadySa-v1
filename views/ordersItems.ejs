@@ -1,0 +1,139 @@
+<%- include('include/_header') %>
+
+    <nav class="navbar navbar-expand-xl navbar-light">
+        <div class="container">
+            <a class="navbar-brand mb-2" href="/" ><img src="/img/logo2.png" alt="logo" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBasic" aria-controls="navbarBasic" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars text-white"></i>
+            </button>
+            <div class="collapse navbar-collapse show" id="navbarBasic">
+                <ul class="navbar-nav me-auto mb-2">
+                    <li class="nav-item m-2">
+                        <a class="nav-link" href="/" >
+                            
+                            الرئيسية
+                        </a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" href="/restaurants" >
+                            
+                            المطاعم
+                        </a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" href="/day-menu" >
+                            
+                            منيو اليوم
+                        </a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" href="/offers" >
+                            
+                            العروض
+                        </a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" href="/profile" >
+                            
+                            حسابي
+                        </a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link active" href="/ordersRestaurants" >
+                            
+                            طلباتي
+                        </a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" href="/contact-us" >
+                            
+                            اتصل بنا
+                        </a>
+                    </li>
+                    <% if(user != null) { %>
+                        <li class="nav-item m-2">
+                            <a class="nav-link" href="/logoutUser" >
+                                
+                                تسجيل خروج
+                            </a>
+                        </li>
+                    <% } else { %>
+                        <li class="nav-item m-2">
+                            <a class="nav-link" href="/login-user" >
+                                    
+                                تسجيل دخول
+                            </a>
+                        </li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="all mt-5 text-right">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <form action="/add-to-orders" method="post">
+                    <div class="box">
+                        
+                            <h2>الوجبات</h2>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>الوجبة</th>
+                                            <th>الكمية</th>
+                                            <th>السعر</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% for(var i = 0 ; i < items.length ; i++) { %>
+                                        <tr>
+                                            <td><%= items[i].mealname %></td>
+                                            <td>
+                                                <input type="number" name="qty" value="<%= items[i].qty %>" class="form-control">
+                                            </td>
+                                            <td><%= items[i].totalprice %><sub>RS</sub></td>
+                                        </tr>
+                                        <% } %>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <h2 class="mt-4">الاضافات</h2>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>الاضافة</th>
+                                            <th>الكمية</th>
+                                            <th>السعر</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% for(var i = 0 ; i < extras.length ; i++) { %>
+                                        <tr>
+                                            <td><%= extras[i].extraname %></td>
+                                            <td>
+                                                <input type="number" name="extraqty" value="<%= extras[i].extraqty %>" class="form-control">
+                                            </td>
+                                            <td><%= extras[i].extratotalprice %><sub>RS</sub></td>
+                                        </tr>
+                                        <% } %>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="box-footer d-flex justify-content-between flex-lg-row">
+                                <div class="left"><a href="/restaurants" class="btn btn-outline-secondary m-2"><i class="fa fa-chevron-right p-2"></i>اضافة طلب آخر</a></div>
+                                <div class="right">
+                                    <button type="submit" class="btn btn-outline-info m-2">تأكيد الطلب<i class="fa fa-chevron-left p-2"></i></button>
+                                </div>
+                              </div>
+                    </div>
+                    </form> 
+                </div>
+            </div>           
+        </div>
+    </div>
+
+<%- include('include/_footer') %>

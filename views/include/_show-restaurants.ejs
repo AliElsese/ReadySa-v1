@@ -1,0 +1,15 @@
+<% for(var i = 0; i < restaurants.length; i++) { %>
+    <tr>
+        <td><%= i + 1 %></td>
+        <td><%= restaurants[i].email %></td>
+        <td>
+            <a href="/api-deleteRestaurant/<%= restaurants[i].restaurantid %>" style="display: inline-block; color: darkred;" class="delete"> 
+                حذف 
+            </a>
+            <br>
+            <a href="/update-restaurant/<%= restaurants[i].restaurantid %>" style="display: inline-block; color: blue;" class="delete"> 
+                تعديل 
+            </a>
+        </td>
+    </tr>
+<% } %>

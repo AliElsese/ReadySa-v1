@@ -1,0 +1,131 @@
+<%- include('include/_header') %>
+
+    <nav class="navbar navbar-expand-xl navbar-light">
+        <div class="container">
+            <a class="navbar-brand mb-2" href="/" ><img src="/img/logo2.png" alt="logo" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBasic" aria-controls="navbarBasic" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars text-white"></i>
+            </button>
+            <div class="collapse navbar-collapse show" id="navbarBasic">
+                <ul class="navbar-nav me-auto mb-2">
+                    <li class="nav-item m-2">
+                        <a class="nav-link" href="/" >
+                            
+                            الرئيسية
+                        </a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" href="/restaurants" >
+                            
+                            المطاعم
+                        </a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" href="/day-menu" >
+                            
+                            منيو اليوم
+                        </a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" href="/offers" >
+                            
+                            العروض
+                        </a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" href="/profile" >
+                            
+                            حسابي
+                        </a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" href="/ordersRestaurants" >
+                            
+                            طلباتي
+                        </a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link active" href="/contact-us" >
+                            
+                            اتصل بنا
+                        </a>
+                    </li>
+                    <% if(user != null) { %>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" href="/logoutUser" >
+                            
+                            تسجيل خروج
+                        </a>
+                    </li>
+                    <% } else { %>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" href="/login-user" >
+                                
+                            تسجيل دخول
+                        </a>
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="contact-us mt-5 mb-5">
+        <div class="container">
+            <div class="mx-auto">
+                <div class="card">
+                    <form action="" class="p-5">
+                        <div class="form-group row m-2">
+                            <div class="col-md-6 mb-2">
+                                <input type="text" class="form-control p-2" id="" placeholder="اسمك" />
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <input type="text" class="form-control p-2" id="" placeholder="الهاتف" />
+                            </div>
+                        </div>
+                        <div class="form-group row m-2">
+                            <div class="col-md-6 mb-2">
+                                <input type="email" class="form-control p-2" id="" placeholder="البريد الاليكتروني" />
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <input type="text" class="form-control p-2" id="" placeholder="عنوان الرسالة" />
+                            </div>
+                        </div>
+                        <div class="form-group row m-2">
+                            <div class="col-md-12 mb-2">
+                                <textarea class="form-control p-2" placeholder="رسالتك" rows="10"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row m-2">
+                            <div class="col-md-6 mb-2">
+                                <input type="checkbox" class="ms-4" id="" />
+                                <label for="">أقبل الشروط <span>والأحكام</span></label>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <input type="submit" class="submit form-control p-2" value="ارسل الرسالة" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <nav class="nav flex-column mt-2 p-2">
+                            <a class="nav-link" href="/"><i class="fab fa-whatsapp ms-3"></i>+960503345036</a>
+                            <a class="nav-link" href="/"><i class="fab fa-instagram ms-3"></i>www.instagram.com/ready-sa</a>
+                            <a class="nav-link" href="/"><i class="fab fa-youtube ms-3"></i>www.youtube.com/ready-sa</a>
+                        </nav>
+                    </div>
+                    <div class="col-md-6">
+                        <nav class="nav flex-column mt-2 p-2">
+                            <a class="nav-link" href="/"><i class="fas fa-at ms-3"></i>support@ready-sa.com</a>
+                            <a class="nav-link" href="/"><i class="fab fa-facebook-f ms-3"></i>www.facebook.com/ready-sa</a>
+                            <a class="nav-link" href="/"><i class="fab fa-twitter ms-3"></i>www.twitter.com/ready-sa</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<%- include('include/_footer') %>

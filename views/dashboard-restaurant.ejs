@@ -1,0 +1,63 @@
+<%- include('include/_headerAdmin') %>
+
+    <nav class="navbar navbar-expand-xl navbar-light">
+        <div class="container">
+            <a class="navbar-brand mb-2" href="/dashboard" ><img src="/img/logo2.png" alt="logo" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBasic" aria-controls="navbarBasic" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars text-white"></i>
+            </button>
+            <div class="collapse navbar-collapse show" id="navbarBasic">
+                <ul class="navbar-nav me-auto mb-2">
+                    <li class="nav-item m-2">
+                        <a class="nav-link" href="/dashboard" >
+                                
+                            الرئيسية
+                        </a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" href="/logout-admin" >
+                                
+                            تسجيل خروج
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content">
+        <div class="container mt-5 mb-5">
+            <div class="row">
+                
+                <div class="col-md-6 mb-3">
+                    <div class="card p-5">
+                        <div class="col-md-12 text-center">
+                            <h3 class="mt-4">بيانات المطاعم</h3>
+                            
+                            <a href="/dashboard-restaurantsDetails" class="btn mt-3">التحكم</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card p-5">
+                        <div class="col-md-12 text-center">
+                            <h3 class="mt-4">اقسام المطاعم</h3>
+                            
+                            <a href="/dashboard-restaurantsCategories" class="btn mt-3">التحكم</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card p-5">
+                        <div class="col-md-12 text-center">
+                            <h3 class="mt-4">مينيوهات المطاعم</h3>
+                            
+                            <a href="/dashboard-restaurantsMenus" class="btn mt-3">التحكم</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<%- include('include/_footerAdmin') %>

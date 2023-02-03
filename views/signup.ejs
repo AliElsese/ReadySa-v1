@@ -1,0 +1,137 @@
+<%- include('include/_header') %>
+
+    <nav class="navbar navbar-expand-xl navbar-light">
+        <div class="container">
+            <a class="navbar-brand mb-2" href="/" ><img src="/img/logo2.png" alt="logo" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarBasic" aria-controls="navbarBasic" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars text-white"></i>
+            </button>
+            <div class="collapse navbar-collapse show" id="navbarBasic">
+                <ul class="navbar-nav me-auto mb-2">
+                    <li class="nav-item m-2">
+                        <a class="nav-link" href="/" >
+                            
+                            الرئيسية
+                        </a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" href="/restaurants" >
+                            
+                            المطاعم
+                        </a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" href="/day-menu" >
+                            
+                            منيو اليوم
+                        </a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" href="/offers" >
+                            
+                            العروض
+                        </a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" href="/profile" >
+                            
+                            حسابي
+                        </a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" href="/ordersRestaurants" >
+                            
+                            طلباتي
+                        </a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" href="/contact-us" >
+                            
+                            اتصل بنا
+                        </a>
+                    </li>
+                    <% if(user != null) { %>
+                        <li class="nav-item m-2">
+                            <a class="nav-link" href="/logoutUser" >
+                                
+                                تسجيل خروج
+                            </a>
+                        </li>
+                    <% } else { %>
+                        <li class="nav-item m-2">
+                            <a class="nav-link" href="/login-user" >
+                                    
+                                تسجيل دخول
+                            </a>
+                        </li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <% if(typeof message != 'undefined') { %>
+            <div class="col-md-12 text-center">
+                <h4 class="alert alert-danger mt-4">
+                    <%= message %>
+                </h4>
+            </div>
+        <% } %>
+    </div>
+
+    <div class="sign-up mt-5 mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 d-none d-md-block"></div>
+                <div class="col-md-6">
+                    <h3 class="mb-3 text-center">سجل الآن</h3>
+                    <form action="/api-registerUser" method="post" class="mt-5">
+                        <div class="form-group row mb-4">
+                            <label for="firstname" class="col-sm-4 col-form-label">الاسم الأول</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control p-2" name="firstname" placeholder="" />
+                            </div>
+                        </div>
+                        <div class="form-group row mb-4">
+                            <label for="lastname" class="col-sm-4 col-form-label">إسم العائلة</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control p-2" name="lastname" placeholder="" />
+                            </div>
+                        </div>
+                        <div class="form-group row mb-4">
+                            <label for="email" class="col-sm-4 col-form-label">البريد الإلكتروني</label>
+                            <div class="col-sm-8">
+                                <input type="email" class="form-control p-2" name="email" placeholder="" />
+                            </div>
+                        </div>
+                        <div class="form-group row mb-4">
+                            <label for="password" class="col-sm-4 col-form-label">كلمة المرور</label>
+                            <div class="col-sm-8">
+                                <input type="password" class="form-control p-2" name="password" placeholder="" />
+                            </div>
+                        </div>
+                        <div class="form-group row mb-4">
+                            <label for="confirmpassword" class="col-sm-4 col-form-label">تأكيد كلمة المرور</label>
+                            <div class="col-sm-8">
+                                <input type="password" class="form-control p-2" name="confirmpassword" placeholder="" />
+                            </div>
+                        </div>
+                        <div class="form-group row mb-4">
+                            
+                            <div class="col-sm-12">
+                                <input type="submit" class="submit form-control p-2" value="تسجيل مستخدم جديد" />
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="row text-center">
+                        <p>هل تمتلك حساب ؟ <a href="/login-user"> تسجيل الدخول </a></p>
+                    </div>
+                </div>
+                <div class="col-md-3 d-none d-md-block"></div>
+            </div>
+        </div>
+    </div>
+
+<%- include('include/_footer') %>
